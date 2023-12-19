@@ -1,0 +1,601 @@
+/*------------------------------------*\
+#FONTS
+\*------------------------------------*/
+@font-face {
+    font-family: "Inter Web";
+    font-weight: 400;
+    src: url("../fonts/Inter-Regular.woff2") format("woff2")
+}
+
+@font-face {
+    font-family: "Inter Web";
+    font-weight: 600;
+    src: url("../fonts/Inter-SemiBold.woff2") format("woff2")
+}
+
+  /*------------------------------------*\
+  #Variables
+  \*------------------------------------*/
+  
+  :root {
+    /* colors */
+    --color-light: rgb(249, 255, 142);
+    --color-dark: #0B3954;
+    --color-main: #ffff00;
+    --color-white: #f1f1f1;
+    --color-black: #000000;
+    --color-gray: #6c6c6c;
+    --color-front: var(--color-dark);
+    --color-back: var(--color-light);
+    /* opacity */
+  
+    /* transitions */
+  }
+  .is-night {
+    --color-front: var(--color-light);
+    --color-back: var(--color-dark);
+  }
+  
+  /*------------------------------------*\
+  #GENERIC
+  \*------------------------------------*/
+  
+  /*
+      Generic: Page
+      ---
+      Global page styles + universal box-sizing:
+  */
+  
+  html {
+    font-feature-settings: 'zero' 1;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-family: 'Inter Web', Helvetica, arial, sans-serif;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: var(--color-front);
+    background-color: var(--color-white);
+  }
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+  
+  /*
+  * Remove text-shadow in selection highlight:
+  * https://twitter.com/miketaylr/status/12228805301
+  *
+  * Customize the background color to match your design.
+  */
+  
+  /* ::-moz-selection {
+      background: red;
+      color: white;
+      text-shadow: none;
+  } */
+  
+  ::selection {
+    background: var(--color-front);
+    color: white;
+    text-shadow: none;
+  }
+  
+  /*------------------------------------*\
+  #Elements
+  \*------------------------------------*/
+  
+  /*
+  Elements: Images
+  ---
+  Default markup for images to make them responsive
+  */
+  
+  img {
+    max-width: 100%;
+    vertical-align: top;
+  }
+  
+  /*
+      Elements: typography
+      ---
+      Default markup for typographic elements
+  */
+  
+  h1,
+  h2,
+  h3 {
+    font-weight: 700;
+  }
+  
+  h1 {
+    font-size: 2.25rem;
+    line-height: 3rem;
+    margin: 0.25rem 0 0px;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    margin: 0 0 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.625rem;
+    line-height: 2rem;
+    margin: 0 0 1.5rem;
+  }
+  
+  h4,
+  h5,
+  h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    margin: 0 0 1.5rem;
+  }
+  
+  p,
+  ol,
+  ul,
+  dl,
+  table,
+  address,
+  figure {
+    margin: 0 0 1.5rem;
+    text-align: center;
+  }
+  
+  ul,
+  ol {
+    padding-left: 1.5rem;
+  }
+  
+  li ul,
+  li ol {
+    margin-bottom: 0;
+  }
+  
+  blockquote {
+    font-style: normal;
+    font-size: 1.4375rem;
+    line-height: 2rem;
+    margin: 0 0 1.5rem;
+  }
+  
+  blockquote * {
+    font-size: inherit;
+    line-height: inherit;
+  }
+  
+  figcaption {
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    margin-top: 0.5rem;
+  }
+  
+  hr {
+    border: 0;
+    height: 0.0625rem;
+    background: LightGrey;
+    margin: 0 0 1.5rem;
+  }
+  
+  a {
+    color: red;
+    outline-color: red;
+    outline-width: medium;
+    outline-offset: 0.125rem;
+  }
+  
+  a:visited,
+  a:active {
+    color: red;
+  }
+  
+  a:hover,
+  a:focus {
+    color: red;
+  }
+  
+  label,
+  input {
+    display: block;
+  }
+  
+  select {
+    width: 100%;
+  }
+  
+  input::placeholder {
+    color: gray;
+  }
+  
+  /*------------------------------------*\
+  #OBJECTS
+  \*------------------------------------*/
+  
+  /*
+      Object: Hide accessible
+      ---
+      Accessibly hide any element
+  */
+  
+  .o-hide-accessible {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+  
+  /*------------------------------------*\
+  #COMPONENTS
+  \*------------------------------------*/
+  /*
+      Component: Grid
+  */
+  
+  .c-overview {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, 25.625rem);
+    grid-auto-rows: 20.625rem; 
+    gap: 2rem;
+    margin: 2rem;
+  }
+  
+  .c-dog_img:hover {
+    border: var(--color-main) 3px solid;
+  }
+  
+  .c-dog_img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding-bottom: 5rem;
+    margin-bottom: -5rem;
+    border-radius: 10px;
+  }
+  
+  .c-dog_img:focus {
+    border: var(--color-main) 3px solid;
+    outline: none;
+  }
+  
+  .c-dog_title_container{
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-main);
+    border-radius: 0 0 10px 10px;
+  }
+  
+  .c-dog_title{
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: var(--color-black);
+    margin: 0;
+    /* Remove hover overlapping */
+    pointer-events: none;
+  }
+  
+  
+  /*
+      Component: Logo
+      ---
+      Website main logo
+  */
+  
+  .c-logo {
+    width: 40px;
+    height: 40px;
+    display: block;
+  }
+  .text-logo {
+    height: 100px;
+    margin: auto;
+  }
+  .c-header {
+    font-family: 'LeaguefontBold', 'Work Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    text-align: center;
+    background-color: var(--color-main);
+    color: var(--color-black);
+    padding-bottom: 0.5rem;
+  }
+  
+  .c-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /*
+      Component: Pop-up
+      ---
+      eader with logo and title
+  */
+  /* The Modal (background) */
+  .modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    overscroll-behavior: contain;
+    /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    opacity: 0;
+    border-radius: 20px;
+    transition: opacity 1s ease-in-out;
+    animation-name: animatetop;
+      animation-duration: 0.8s
+  }
+  .modal-content-show{
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+  }
+  .modal-foto{
+    margin-top: 1.5rem;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+  
+  }
+  
+  /* Kruisje */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 1.75rem;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  /*------------------------------------*\
+  #CHARTS
+  \*------------------------------------*/
+
+  .container {
+    display: grid;
+    place-items: center;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 50% 50%;
+    grid-gap: 1rem 0px;
+  }
+  .c-chart-title{
+    text-align: center;
+    color: var(--color-black);
+    margin-top: 1.5rem;
+  }
+  .c-circular-progress {
+    position: relative;
+    height: 140px;
+    width: 140px;
+    border-radius: 50%;
+    display: grid;
+    grid-row-start: 1;
+    place-items: center;
+    
+  }
+  .c-circular-progress:before {
+    content: "";
+    position: absolute;
+    height: 84%;
+    width: 84%;
+    background-color: var(--color-white);
+    border-radius: 50%;
+  }
+  .c-value-container {
+    position: relative;
+    /* font-family: "Poppins", sans-serif; */
+    font-size: 30px;
+    color: var(--color-black);
+    width: 110px;
+  }
+  .circular-progress1 {
+    grid-row-start: 1;
+  }
+  .circular-progress2 {
+    grid-row-start: 4;
+  }
+  .circular-progress3 {
+    grid-row-start: 4;
+  }
+
+
+
+
+  /*------------------------------------*\
+  #UTILITIES
+  \*------------------------------------*/
+
+  .u-muted {
+    opacity: 0.5;
+  }
+  
+  /*------------------------------------*\
+  #MEDIA
+  \*------------------------------------*/
+  
+  /*
+      Print styles.
+      ---
+      Inlined to avoid the additional HTTP request:
+      http://www.phpied.com/delay-loading-your-print-css/
+  */
+  
+  @media print {
+    *,
+    *:before,
+    *:after {
+      background: transparent !important;
+      color: #000 !important;
+      /* Black prints faster:
+          http://www.sanbeiji.com/archives/953 */
+      box-shadow: none !important;
+      text-shadow: none !important;
+    }
+    a,
+    a:visited {
+      text-decoration: underline;
+    }
+    a[href]:after {
+      content: ' (' attr(href) ')';
+    }
+    abbr[title]:after {
+      content: ' (' attr(title) ')';
+    }
+    /*
+      * Don't show links that are fragment identifiers,
+      * or use the `javascript:` pseudo protocol
+      */
+    a[href^='#']:after,
+    a[href^='javascript:']:after {
+      content: '';
+    }
+    pre {
+      white-space: pre-wrap !important;
+    }
+    pre,
+    blockquote {
+      border: 1px solid #999;
+      page-break-inside: avoid;
+    }
+    /*
+      * Printing Tables:
+      * http://css-discuss.incutio.com/wiki/Printing_Tables
+      */
+    thead {
+      display: table-header-group;
+    }
+    tr,
+    img {
+      page-break-inside: avoid;
+    }
+    p,
+    h2,
+    h3 {
+      orphans: 3;
+      widows: 3;
+    }
+    h2,
+    h3 {
+      page-break-after: avoid;
+    }
+  }
+  
+  
+  @media screen and (min-width: 768px) {
+    .c-overview {
+        gap: 2.5rem;
+      }
+      .modal-foto {
+        /* padding-left: 40%; */
+        margin-top: 1.5rem;
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        max-height: 280px;
+        max-width: 420px;
+      }
+          .c-circular-progress {
+            position: relative;
+            height: 140px;
+            width: 140px;
+            border-radius: 50%;
+            display: grid;
+            grid-row-start: 1;
+            place-items: center;
+          }
+
+          
+  }
+  @media screen and (min-width: 1028px){
+      .c-overview {
+        gap: 3rem;
+      }
+      .c-circular-progress {
+        position: relative;
+        height: 140px;
+        width: 140px;
+        border-radius: 50%;
+        display: grid;
+        grid-row-start: 1;
+        place-items: center;
+      }
+      .c-chart-title {
+        text-align: center;
+        font-size: 2rem;
+      }
+      .modal-foto {
+        /* padding-left: 40%; */
+        margin-top: 1.5rem;
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        max-height: 280px;
+        max-width: 380px;
+      }
+  
+  }
+  /* Add Animation */
+  @keyframes animatetop {
+    from {
+      top: -300px;
+      opacity: 0
+    }
+  
+    to {
+      top: 0;
+      opacity: 1
+    }
+  }
