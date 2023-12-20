@@ -47,10 +47,10 @@ const ShowDetail = async function (jsonObject) {
   image.src = `${imagee}`;
   console.log(dogs[id].name);
 };
-const Dials = function () {
-  showbar();
-  showbar1();
-};
+// const Dials = function () {
+//   showbar();
+//   showbar1();
+// };
 
 const printAllDog = async function (jsonObject) {
   console.log(jsonObject);
